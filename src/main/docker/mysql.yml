@@ -1,0 +1,14 @@
+version: '2'
+services:
+    gj-mysql:
+        container_name: gj-mysql
+        image: mysql:5.7.12
+        # volumes:
+        #     - ~/volumes/jhipster/gj/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=gj
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl
